@@ -1,0 +1,15 @@
+<!-- /Users/melinabehzadi/Desktop/101447858-lab-test2-comp3133/src/app/components/missionlist/missionlist.component.html-->
+
+<mat-card *ngFor="let mission of missions" class="mission-card">
+  <img mat-card-image [src]="mission.links.mission_patch_small" alt="Mission Patch">
+  <mat-card-title>{{ mission.mission_name }} ({{ mission.launch_year }})</mat-card-title>
+  <mat-card-content>
+    <p>{{ mission.details || 'No details available.' }}</p>
+    <p><strong>Rocket:</strong> {{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</p>
+    <p><strong>Flight #:</strong> {{ mission.flight_number }}</p>
+
+    <button mat-raised-button color="primary" (click)="viewDetails(mission.flight_number)">
+      View Details
+    </button>
+  </mat-card-content>
+</mat-card>

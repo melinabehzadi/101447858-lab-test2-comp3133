@@ -1,0 +1,23 @@
+<!-- /Users/melinabehzadi/Desktop/101447858-lab-test2-comp3133/src/app/components/missiondetails/missiondetails.component.html -->
+
+<div class="details-container" *ngIf="mission">
+  <mat-card>
+    <img mat-card-image [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+    <mat-card-title>{{ mission.mission_name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
+      <p><strong>Details:</strong> {{ mission.details || 'No details.' }}</p>
+      <p><strong>Rocket:</strong> {{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</p>
+      <p>
+        <a [href]="mission.links.article_link" target="_blank">Article</a> |
+        <a [href]="mission.links.wikipedia" target="_blank">Wikipedia</a> |
+        <a [href]="mission.links.video_link" target="_blank">Video</a>
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="back-button">
+    <button mat-raised-button color="primary" (click)="goBack()">← Back to List</button>
+  </div>
+</div>
+

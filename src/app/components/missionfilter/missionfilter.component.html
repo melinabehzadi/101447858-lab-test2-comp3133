@@ -1,0 +1,27 @@
+<!-- /Users/melinabehzadi/Desktop/101447858-lab-test2-comp3133/src/app/components/missionfilter/missionfilter.component.html -->
+
+<div class="filter-bar">
+  <mat-form-field class="styled-field" appearance="outline">
+    <mat-label class="label-text">Launch Year</mat-label>
+    <input matInput [(ngModel)]="year" placeholder="e.g. 2020" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="search()">Search</button>
+  <button mat-raised-button class="clear-btn" (click)="reset()">Clear</button>
+</div>
+
+<div class="filtered-results" *ngIf="filteredMissions.length > 0">
+  <mat-card *ngFor="let mission of filteredMissions" class="mission-card">
+    <img mat-card-image [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+    <mat-card-title>{{ mission.mission_name }} ({{ mission.launch_year }})</mat-card-title>
+    <mat-card-content>
+      <p>{{ mission.details || 'No details available.' }}</p>
+      <p><strong>Rocket:</strong> {{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</p>
+      <p><strong>Flight #:</strong> {{ mission.flight_number }}</p>
+
+      <button mat-raised-button color="primary" routerLink="/mission/{{ mission.flight_number }}">
+        View Details
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

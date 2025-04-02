@@ -1,0 +1,62 @@
+/* /Users/melinabehzadi/Desktop/101447858-lab-test2-comp3133/src/app/components/missionlist/missionlist.component.scss */
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 24px;
+  background-color: #f9f9fc; // Slight off-white background
+}
+
+.mission-card {
+  width: 220px;
+  background-color: #ffffff; // White for contrast
+  border-radius: 12px;
+  border: 2px solid #b39ddb; // Soft purple border
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: #7e57c2; // Darker purple on hover
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  mat-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 12px 0;
+  }
+
+  mat-card-content {
+    font-size: 14px;
+    padding: 4px 12px 12px;
+
+    p {
+      margin: 6px 0;
+    }
+
+    button {
+      margin-top: 8px;
+      background-color: #45275b;
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 6px 16px;
+
+      &:hover {
+        background-color: #5e3d77;
+      }
+    }
+  }
+}
